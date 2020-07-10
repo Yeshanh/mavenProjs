@@ -12,6 +12,9 @@
         <module>core</module>
       <module>service</module>
         <module>sortMethods</module>
+        <module>bubbleSort</module>
+      <module>insertionSort</module>
+      <module>selectionSort</module>
     </modules>
 
     <name>my-proj</name>

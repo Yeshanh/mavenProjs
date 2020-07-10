@@ -1,6 +1,9 @@
 package com.mycompany.proj.service;
 
-import com.mycompany.proj.core.ProcessData;
+import com.mycompany.proj.core.BubbleSorter;
+import com.mycompany.proj.core.InsertionSort;
+import com.mycompany.proj.core.SelectSorter;
+import com.mycompany.proj.core.Sorter;
 
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -19,7 +22,10 @@ public class GetData {
         int userValue;
 
         Scanner sc=new Scanner(System.in);
-        ProcessData sortObject = new ProcessData();
+        Sorter bubbleSorter = new BubbleSorter();
+        Sorter selectionSorter = new SelectSorter();
+        Sorter insertionSorter = new InsertionSort();
+
 
         for (int x = 0; x < 5; x++){
             System.out.println("Enter a number");
@@ -29,17 +35,17 @@ public class GetData {
 
 
         long start1 = System.nanoTime();
-        result = sortObject.insertionSort(myList);
+        result = insertionSorter.sort(myList);
         long end1 = System.nanoTime();
         long timeInMillis = TimeUnit.NANOSECONDS.convert(end1 - start1, TimeUnit.NANOSECONDS);
 
         long start2 = System.nanoTime();
-        result2 = sortObject.bubbleSort(myList);
+        result2 = bubbleSorter.sort(myList);
         long end2 = System.nanoTime();
         long timeInMillis2 = TimeUnit.NANOSECONDS.convert(end2 - start2, TimeUnit.NANOSECONDS);
 
         long start3 = System.nanoTime();
-        result3 = sortObject.selectionSort(myList);
+        result3 = selectionSorter.sort(myList);
         long end3 = System.nanoTime();
         long timeInMillis3 = TimeUnit.NANOSECONDS.convert(end3 - start3, TimeUnit.NANOSECONDS);
 
